@@ -4,7 +4,7 @@
 
 #define R 1
 #define W 0
-#define EEPROM 0xA0
+#define EEPROM 0xA0 //Endereco da memoria da placa de desenvolvimento
 
 unsigned char retorno;
 unsigned char relogio = 0;
@@ -102,7 +102,8 @@ unsigned char leitura_eeprom(unsigned char endereco){
 	}
 	return (SMB0DAT);
 }
-
+//O firmare escuta a entrada Uart0
+//E Exibe na Uart0
 void main(void){
     Init_Device();
     SFRPAGE = LEGACY_PAGE;	
